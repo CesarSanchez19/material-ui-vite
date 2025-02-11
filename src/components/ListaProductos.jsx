@@ -1,33 +1,40 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Switch from '@mui/material/Switch'
+import { useState } from 'react'
 import Typography from '@mui/material/Typography'
+import { Divider } from '@mui/material'
+import ListaVerduras from './productos/ListaVerduras'
 
 const ListaProductos = () => {
 
-    const [home, setHome] = useState(false);
+  const [home, setHome] = useState(false);
 
-    const changestate = () => {
-        setHome(!home);
-    }
-    console.log('Tu switch esta: ',home);
+	const changeState = () => {
+    setHome(!home)
+    console.log('Tu switch esta: ', home)
+	}
 
-  return (
-    <div>
-      <h1>Lista de productos</h1>
-      <Switch
-        value={home}
-        checked={home}
-        onChange={changestate}
-        inputProps={{ "aria-label": '' }}
-        
-      />
 
-        {/* Cambia el color y tamaño de texto*/}
-      {
-        <Typography variant={ home ? "h1" : "h3"} color={home ? "success" : "error"}>{home ? "Encendido" : "Apagado"}</Typography>
-      }
-    </div>
-  )
+	return (
+
+	<div>
+	   <Switch
+	     value="home"
+	     checked={home}
+	     onChange={changeState}
+	     inputProps={{ "aria-label": '' }}
+	   />
+	   {
+	     <Typography variant={home ? "h1" : "h3"} color={home ? "success" : "error"}>
+	       {home ? "Encendido" : "Apagado"}
+	     </Typography>
+		}
+			<Divider color="secondary" />
+
+			<ListaVerduras/>
+
+	  </div>
+	)
 }
 
 export default ListaProductos
