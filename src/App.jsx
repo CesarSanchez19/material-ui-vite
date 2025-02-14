@@ -1,16 +1,13 @@
 import * as React from 'react';
-import { AlumnoPromedio } from './components/AlumnoPromedio';
-import ComponenteEncabezado from './ComponenteEncabezado';
-import ListaProductos from './components/ListaProductos';
-
+import MainTienda from './components/Tienda/MainTienda/MainTienda.jsx';
+import './App.css'
 
 export default function App() {
   
   return (
     <>
-      <ComponenteEncabezado/>
-      <ListaProductos/>
-      
+    <MainTienda/>
+    
     </>
 );
 }
